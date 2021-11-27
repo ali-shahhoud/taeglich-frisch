@@ -1,0 +1,27 @@
+{
+  "7": [
+    {
+      "_id": "61894e5ef1570b80cf313546",
+      "productName": "Brokkoli",
+      "preis": "3.1",
+      "kategorie": "Gemüse",
+      "ursprungland": "Nordamerika",
+      "sorte": "Sahi",
+      "Image": "images/Brokkoli.JPG",
+      "__v": "0"
+    },
+    {
+      "_id": "61894da17a62823589cafe2c",
+      "productName": "Kirsche",
+      "preis": "5.8",
+      "kategorie": "Obst",
+      "ursprungland": "Polen",
+      "sorte": "Burlat",
+      "Image": "images/Kirsche.JPG",
+      "__v": "0"
+    }
+  ],
+  "44": [],
+  "q": [],
+  "admin": []
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Registrieren</title>
+    <meta charset="utf-8">
+    <script src="register.js" defer></script>
+    <link rel="stylesheet" href="css/register.css">
+  </head>
+  <body>
+
+    <form class="registrieren" action="login.html" method="POST">
+      <h1>Registrieren</h1>
+
+        <label>
+          <span>Benutzer:</span>
+          <input name="username" type="text" placeholder="Benutzer" required max-length="50">
+        </label>
+
+        <label>
+          <span>Vorname:</span>
+          <input name="firstname" type="text" placeholder="Vorname" required max-length="50">
+        </label><br>
+        <label>
+          <span>Nachname:</span>
+          <input name="lastname" type="text" placeholder="Nachname" required max-length="50">
+        </label>
+
+        <label>
+          <span>Passwort:</span>
+          <input name="password" type="password" placeholder="Passwort" required max-length="50">
+        </label>
+
+      <div>
+        <input type="hidden" name="type" value="register">
+        <input type="submit" value="Registrieren">
+        <a href="/">Zur Startseite</a>
+      </div>
+    </form>
+
+  </body>
+</html>

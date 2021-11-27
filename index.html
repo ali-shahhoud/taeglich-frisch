@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de" class="%LOGGED_IN%">
+  <head>
+    <title>Täglich Frisch</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <script  src="/index.js" defer></script>
+      <link rel="stylesheet" href="css/index.css">
+  </head>
+
+  <body>
+  <div class="top">%HEADER%</div>
+
+  <!--start slider-->
+  <form action="aaa" method="POST" class="login">
+    <div class="slider">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="overlay">
+            <h1>Wir liefern täglich <span>frisches</span>Gemüse & Obst für Sie</h1>
+          </div>
+          <div class="carousel-item active">
+            <img src="images/fruit&vegetable.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/vegetable.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/fruit.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </div>
+  </form>
+  <!--end slider-->
+  <!-- start Products -->
+      <div  class="container" >
+        <div class="row" tabindex="0" id="card" ></div>
+      </div>
+  <!-- end Products -->
+  <div>'%FOOTER%'</div>
+  <script src="js/bootstrap.min.js"></script>
+   <script>
+
+          function addToCart(product) {
+
+            console.log('Product', product);
+            const req = new XMLHttpRequest();
+
+            req.open('POST', 'index.html');
+
+            req.send(new URLSearchParams(product));
+
+            req.addEventListener('load', function () {
+              event.preventDefault();
+
+              switch (this.status) {
+
+                case 200:
+                  console.log('200');
+                  // location.href = this.responseURL;
+                  console.log("location.href", location.href);
+                  break;
+
+                case 400:
+                  console.log('400');
+                  break;
+
+                case 401:
+                  console.log('401');
+                  break;
+
+                default:
+                  alert('un expected error');
+                  break;
+              }
+            });
+
+          }
+   </script>
+  </body>
+</html>
+

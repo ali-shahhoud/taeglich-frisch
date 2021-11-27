@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <title>products</title>
+  <link rel="stylesheet" href="css/products.css">
+  <script src="products.js" defer></script>
+</head>
+<body>
+
+  <div>%HEADER%</div>
+  <!--start contact me-->
+  <div class="add-product">
+
+        <form class="add" action="products.html" method="POST" name="asd">
+            <div>
+              <label >produkt Name</label>
+              <input type="text" name="Name">
+              <label >preis</label>
+              <input type="number" name="preis">
+              <label >kategorie</label>
+              <input type="text" name="kategorie">
+              <label>ursprung land</label>
+              <input type="text" name="ursprung">
+              <label>sorte</label>
+              <input type="text" name="sorte">
+              <label>Image (Bitte stellen Sie sicher, dass das angeforderte Bild in der Bilddatei enthalten ist)</label>
+              <input type="text" name="Image"> <br>
+              <input type="submit" value="add Product" onclick="return setMethodPost()">
+            </div>
+            <div>
+              <label >produkt Name</label>
+              <input type="text" name="deleted">
+              <input type="submit" value="delete Product" onclick="return setMethodDelete()">
+            </div>
+        </form>
+
+    </div>
+    <!-- <div class="delete-product">
+      <form class="delete" action="products.html" method="POST">
+        <div>add Product</div>
+        <label >produkt Name</label>
+        <input type="text" name="deleted-product">
+        <input type="submit" value="delete Product">
+    </form>
+    </div> -->
+
+  </div>
+  <!--end contact me-->
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

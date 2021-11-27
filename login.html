@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Anmelden</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="login.js" defer></script>
+  </head>
+  <body>
+    <div>%HEADER%</div>
+    <form action="login.html" method="POST" class="login">
+      <h4> Login</h4>
+
+        <input name="username" type="text" placeholder="Benutzer" required max-length="50" value="%USERNAME%">
+
+
+        <input name="password" type="password" placeholder="Passwort" required max-length="50">
+
+
+      <input type="hidden" name="type" value="login">
+      <div>
+        <input  type="submit" value="Login"/>
+        <a href="register.html">Hier registrieren</a>
+      </div>
+    </form>
+
+
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
