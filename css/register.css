@@ -1,0 +1,53 @@
+
+
+* {
+  box-sizing: border-box;
+  position: relative;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background-color: #F4F4F4 ;
+}
+
+.registrieren{
+  width: 25rem;
+
+  margin: 10rem auto;
+}
+.registrieren h1 {
+ text-align: center;
+ font-size: larger;
+}
+.registrieren input {
+  margin-bottom: 0.5rem;
+  margin-top: 0,5rem;
+
+  width: 100%;
+  height: 2rem;
+  background-color: #EAEAEA;
+  border-radius: 5px;
+}
+
+.registrieren div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.registrieren div input {
+  background-color: #008DDE;
+  color: #F4F4F4;
+  width: 40%;
+  display: inline;
+}
+
+

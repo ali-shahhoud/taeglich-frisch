@@ -1,0 +1,150 @@
+
+:root {
+
+  --main-green: #caf2a5;
+
+  --main-red:   #eb7758;
+
+  --main-wight: #f09b88;
+  }
+
+/*start upper bar */
+.top {
+
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
+.upper-bar {
+  background-color: var(--main-green);
+  color: var(--main-red);
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+
+}
+.upper-bar .container .row div {
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+.upper-bar .container .row div:first-of-type span:hover {
+  color: var(--main-wight);
+}
+.upper-bar .container .row div:first-of-type span {
+  margin: 8px;
+}
+.upper-bar .container .row div:last-of-type {
+  text-align: right;
+}
+.upper-bar .container .row div:last-of-type span:hover {
+  color: var(--main-wight);
+}
+.upper-bar .container .row div:last-of-type .red {
+  border: 2px solid var(--main-red);
+  color: var(--main-wight);
+}
+.upper-bar .container .row div:last-of-type .red:hover {
+  background-color: var(--main-red);
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: var(--main-red);
+}
+
+.btn-outline-success {
+  color: var(--main-red);
+  border-color: var(--main-red);
+}
+.btn-outline-success:hover {
+  background-color: var(--main-red);
+}
+/*end upper bar */
+
+/*start navbar*/
+
+
+
+.navbar-collapse ul {
+  margin-left: auto;
+}
+.navbar-brand span:first-of-type {
+   color: var(--main-green);
+   font-size: 40px;
+   font-weight: bold;
+}
+.navbar-brand span:last-of-type {
+   color: var(--main-red);
+   font-size: 40px;
+   font-weight: lighter;
+}
+.navbar-nav .nav-link {
+   font-size: 20px;
+   margin-left: 25px;
+   color: #08526D;
+
+}
+.navbar-nav .nav-link.active {
+   color: var(--main-red)!important
+}
+/*end navbar*/
+
+/* start contact me*/
+.contact-me {
+  background-color: var(--main-green);
+  overflow: hidden;
+
+}
+.contact-me .info {
+  float: left;
+  width: 50%;
+  margin-top: 40px;
+}
+.contact-me .form {
+  width: 50%;
+  float: left;
+  margin-top: 80px;
+}
+.contact-me .form label {
+  display: block;
+  color: var(--main-wight);
+  font-size: 20px;
+}
+.contact-me .form input {
+  background-color: #f1eeecab;
+  width: 80%;
+  height: 40px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.contact-me .form input[type="submit"] {
+  background-color: var(--main-red) ;
+  width: 150px;
+  color: #fff;
+  border: 0px;
+  margin-bottom: 60px;
+}
+.contact-me .form textarea {
+  background-color: #f1eeecab;
+  width: 80%;
+  height: 200px;
+  margin-top: 25px;
+}
+.contact-me .info h2 {
+  color: var(--main-wight);
+  margin-left: 20px;
+  margin-top: 40px;
+  font-size: 30px;
+}
+.contact-me .info p {
+  color: #606569;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 1.7;
+}
+.contact-me .info p strong {
+  color: var(--main-wight);
+  margin-right: 20px;
+}
+
+/* end contact me*/
