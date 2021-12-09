@@ -34,14 +34,6 @@ module.exports = (file, req, res) => {
       }
 
   return file
-    .toString()
-    .replace("Gast", () => {
-      if (SESSION) {
-        return `${SESSION.username} `;
-      } else {
-        return ` <a href="login.html">Zum Login.</a>`;
-      }
-    })
 
 };
 

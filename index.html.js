@@ -8,7 +8,7 @@ module.exports = (file, req, res) => {
     const SESSION = req.getSession();
 
     const loggedUser = SESSION.username;
-
+     console.log(loggedUser);
     const fileData = JSON.parse(readFileSync('einkaufswagen.json'));
 
 
@@ -19,22 +19,15 @@ module.exports = (file, req, res) => {
         fileData[loggedUser].push($_POST);
 
         writeFileSync('einkaufswagen.json', JSON.stringify(fileData, null, 2));
-
+        res.statusCode = 202;
+        res.end('401 Unauthorized');
       });
-
+      return null
       break;
 
     }
 
   return file
-    .toString()
-    .replace("Gast", () => {
-      if (SESSION) {
-        return `${SESSION.username} `;
-      } else {
-        return ` <a href="login.html">Zum Login.</a>`;
-      }
-    })
 
 };
 

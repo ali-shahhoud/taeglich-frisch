@@ -3,10 +3,14 @@
 
   --main-green: #caf2a5;
 
-  --main-red:   #eb7758;
+  --main-red: #eb7758;
 
-  --main-wight: #f09b88;
   }
+
+.container {
+  width: 80%;
+
+}
 
 /*start upper bar */
 .top {
@@ -30,20 +34,27 @@
 
 }
 .upper-bar .container .row div:first-of-type span:hover {
-  color: var(--main-wight);
+  color: white;
 }
 .upper-bar .container .row div:first-of-type span {
   margin: 8px;
 }
+
+@media only screen and (max-width: 900px) {
+  .upper-bar .container .row div:first-of-type {
+    display: none;
+  }
+}
+
 .upper-bar .container .row div:last-of-type {
   text-align: right;
 }
 .upper-bar .container .row div:last-of-type span:hover {
-  color: var(--main-wight);
+  color: white;
 }
 .upper-bar .container .row div:last-of-type .red {
   border: 2px solid var(--main-red);
-  color: var(--main-wight);
+  color: white;
 }
 .upper-bar .container .row div:last-of-type .red:hover {
   background-color: var(--main-red);
@@ -73,6 +84,12 @@
    font-size: 40px;
    font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar-brand span:first-of-type {
+    font-size: 30px;
+  }
+}
 .navbar-brand span:last-of-type {
    color: var(--main-red);
    font-size: 40px;
@@ -84,6 +101,9 @@
    color: #08526D;
 
 }
+
+
+
 .navbar-nav .nav-link.active {
    color: var(--main-red)!important
 }
@@ -100,11 +120,25 @@
   width: 50%;
   margin-top: 40px;
 }
+
+@media only screen and (max-width: 600px) {
+  .contact-me .info  {
+    display: none;
+  }
+}
 .contact-me .form {
   width: 50%;
   float: left;
   margin-top: 80px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .contact-me .form  {
+    width:100%;
+  }
+}
+
 .contact-me .form label {
   display: block;
   color: var(--main-wight);
@@ -130,6 +164,10 @@
   height: 200px;
   margin-top: 25px;
 }
+
+
+
+
 .contact-me .info h2 {
   color: var(--main-wight);
   margin-left: 20px;
@@ -148,3 +186,43 @@
 }
 
 /* end contact me*/
+.sending {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(0.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sending[hidden] {
+  display: none;
+}
+.sending .status {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.sending .continue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 2rem;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.sending .continue:empty {
+  display: none;
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

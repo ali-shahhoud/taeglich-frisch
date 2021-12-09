@@ -8,7 +8,8 @@
   }
 
 .container {
-  width: 70rem;
+  width: 80%;
+
 }
 
 /*start upper bar */
@@ -38,6 +39,13 @@
 .upper-bar .container .row div:first-of-type span {
   margin: 8px;
 }
+
+@media only screen and (max-width: 900px) {
+  .upper-bar .container .row div:first-of-type {
+    display: none;
+  }
+}
+
 .upper-bar .container .row div:last-of-type {
   text-align: right;
 }
@@ -76,6 +84,12 @@
    font-size: 40px;
    font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar-brand span:first-of-type {
+    font-size: 30px;
+  }
+}
 .navbar-brand span:last-of-type {
    color: var(--main-red);
    font-size: 40px;
@@ -87,6 +101,9 @@
    color: #08526D;
 
 }
+
+
+
 .navbar-nav .nav-link.active {
    color: var(--main-red)!important
 }

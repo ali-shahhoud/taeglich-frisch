@@ -1,22 +1,10 @@
 'use strict';
 
-// username in navbar zeihen
-function readCookie(name) {
-  let nameEQ = name + "=";
-  let ca = document.cookie.split(';');
-  for(let i=0;i < ca.length;i++) {
-      let c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-  }
-  return null;
-}
-
-let user = readCookie("username")
-
-document.querySelector('#navbarDropdown').innerHTML = user
 
 
+ let user = (document.querySelector('#navbarDropdown').innerHTML).replace(/\s/g, '')
+
+console.log(user);
 
 fetch('einkaufswagen.json').then(res => res.json()).then(data => {
 console.log(data);
@@ -29,9 +17,9 @@ console.log(data);
           (function adding() {
             document.querySelector('#card').innerHTML +=
             `
-            <div class=" col col-12 col-md-6 col-lg-4 col-xl-3 outerCard"  id="${inninArr[key].productName}">
+            <div class=" col col-12 col-md-6 col-lg-4 col-xl-3 outerCard"  id="${inninArr[key].productName}" align="center">
               <div class="card border-light card_in"  style="width: 15rem;" >
-                <img src="${inninArr[key].Image}" class="card-img-top  " alt="${key}" data-bs-toggle="modal" data-bs-target="#exampleModal${key}">
+                <img src="/images/${inninArr[key].Image}" class="card-img-top  " alt="${key}" data-bs-toggle="modal" data-bs-target="#exampleModal${key}">
                 <div class="card-body">
                   <h3 class="card-title mx-auto"  style="width: 200px;">${inninArr[key].productName}</h3>
                   <p class="card-text Preis">Preis :${inninArr[key].preis} €</p>
@@ -72,7 +60,7 @@ let conter = function(){ setTimeout(() => {let x = document.querySelectorAll(".P
             summe += Number(divsArr[s].textContent.replace( /[^\d\.]*/g,''));
             console.log(summe);
             if (s == divsArr.length - 1) {
-              document.querySelector("#summe").innerHTML = `summe = ${summe} €`
+              document.querySelector("#summe").innerHTML = `summe = ${Math.trunc(summe)} €`
             }
       }
    }, 500)

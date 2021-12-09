@@ -14,7 +14,12 @@
   <!--start contact me-->
   <div class="add-product">
 
-        <form class="add" action="products.html" method="POST" name="asd">
+      <div class="upload">
+        <input type="file" id="inpFile" accept="image/png, image/jpeg" >
+        <button id="btnUpload">Upload</button>
+      </div>
+
+      <form class="add" action="products.html" method="POST" name="asd" >
             <div>
               <label >produkt Name</label>
               <input type="text" name="Name">
@@ -26,29 +31,24 @@
               <input type="text" name="ursprung">
               <label>sorte</label>
               <input type="text" name="sorte">
-              <label>Image (Bitte stellen Sie sicher, dass das angeforderte Bild in der Bilddatei enthalten ist)</label>
-              <input type="text" name="Image"> <br>
+
               <input type="submit" value="add Product" onclick="return setMethodPost()">
             </div>
+
             <div>
               <label >produkt Name</label>
-              <input type="text" name="deleted">
-              <input type="submit" value="delete Product" onclick="return setMethodDelete()">
+              <select id="select"  name="deleted" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected>Wählen Sie ein Produkt</option>
+              </select>
+              <input  type="submit" value="delete Product" onclick="return setMethodDelete()">
             </div>
-        </form>
+      </form>
 
-    </div>
-    <!-- <div class="delete-product">
-      <form class="delete" action="products.html" method="POST">
-        <div>add Product</div>
-        <label >produkt Name</label>
-        <input type="text" name="deleted-product">
-        <input type="submit" value="delete Product">
-    </form>
-    </div> -->
 
   </div>
-  <!--end contact me-->
+
   <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

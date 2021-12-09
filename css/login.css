@@ -1,6 +1,5 @@
 
 
-
 :root {
 
   --main-green: #caf2a5;
@@ -9,11 +8,19 @@
 
   }
 
+.container {
+  width: 80%;
 
-body{
-  background-color: white(0, 0%, 96%) ;
 }
+
 /*start upper bar */
+.top {
+
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
 .upper-bar {
   background-color: var(--main-green);
   color: var(--main-red);
@@ -33,6 +40,13 @@ body{
 .upper-bar .container .row div:first-of-type span {
   margin: 8px;
 }
+
+@media only screen and (max-width: 900px) {
+  .upper-bar .container .row div:first-of-type {
+    display: none;
+  }
+}
+
 .upper-bar .container .row div:last-of-type {
   text-align: right;
 }
@@ -40,15 +54,28 @@ body{
   color: white;
 }
 .upper-bar .container .row div:last-of-type .red {
-  border: 2px solid #dc3545;
+  border: 2px solid var(--main-red);
   color: white;
 }
 .upper-bar .container .row div:last-of-type .red:hover {
-  background-color: #dc3545;
+  background-color: var(--main-red);
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: var(--main-red);
+}
+
+.btn-outline-success {
+  color: var(--main-red);
+  border-color: var(--main-red);
+}
+.btn-outline-success:hover {
+  background-color: var(--main-red);
 }
 /*end upper bar */
 
 /*start navbar*/
+
+
 
 .navbar-collapse ul {
   margin-left: auto;
@@ -58,8 +85,14 @@ body{
    font-size: 40px;
    font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar-brand span:first-of-type {
+    font-size: 30px;
+  }
+}
 .navbar-brand span:last-of-type {
-   color: #dc3545;
+   color: var(--main-red);
    font-size: 40px;
    font-weight: lighter;
 }
@@ -69,8 +102,11 @@ body{
    color: #08526D;
 
 }
+
+
+
 .navbar-nav .nav-link.active {
-   color: #dc3545!important
+   color: var(--main-red)!important
 }
 /*end navbar*/
 .login{

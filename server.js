@@ -9,12 +9,6 @@ const mongoose = require('mongoose');
 const Products = require('./_moduls/products.js')
 const DB_URI = "mongodb+srv://ali:815173@cluster0.hidag.mongodb.net/ONLINE-SHOP?retryWrites=true&w=majority"
 
-// const server ={
-//   host: "mail.gmx.net",
-//   port: 465,
-//   username: "web-shop-taeglich-frisch@gmx.at",
-//   password: "web@shop"
-// }
 
 const server = require('./server.json');
 
@@ -45,11 +39,7 @@ mongoose.connect(DB_URI).then((result) => console.log('connected to db')).catch(
 
 
 
-
-
-
-
-const SERVER = createServer((req, res) => {
+const SERVER = createServer( async (req, res) => {
   const SESSION = req.getSession();
   if (SESSION) {
     print(`Neuer Request von '${SESSION.username}':`, req.url);
@@ -75,9 +65,6 @@ const SERVER = createServer((req, res) => {
   }
 
 
-// start MONGOOOOOOOOOOS
-
-
   if (PATH === 'index.html') {
     Products.find({} , function (err, products) {
     if(err) throw err;
@@ -85,66 +72,6 @@ const SERVER = createServer((req, res) => {
     });
   };
 
-
-  if((req.method === 'POST') && (PATH === 'products.html')) {
-
-    req.postData(($_POST) => {
-
-        let newProd = Products({
-              //id
-                "productName": $_POST.Name,
-                "preis": $_POST.preis,
-                "kategorie": $_POST.kategorie,
-                "ursprungland": $_POST.ursprung,
-                "sorte": $_POST.sorte,
-                "Image": $_POST.Image
-        })
-        if (!newProd.productName || !newProd.preis || !newProd.kategorie || !newProd.ursprungland  || !newProd.sorte || !newProd.Image) {
-          res.statusCode = 400;
-          return ;
-        }
-
-        newProd.save(function (err) {
-          if (err) throw err;
-          console.log("saaaaaavd");
-
-        })
-    })
-  }
-  console.log(res.statusCode);
-  if((req.method === 'DELETE') && (PATH === 'products.html')) {
-
-    req.postData(($_POST) => {
-
-      let deletedProduct = $_POST.deleted;
-
-      Products.deleteOne({ productName: `${deletedProduct}`}, (err,returns) => {
-        if (err) { res.statusCode = 503;}
-        if (returns.deletedCount === 0 ) {res.statusCode = 405; return}
-      })
-
-    })
-  }
-// end  MONGOOOOOOOOOOS
-
-// start SMTP
-if((req.method === 'POST') && (PATH === 'kontakt.html')) {
-
-    req.postData(($_POST) => {
-
-      const $subject = $_POST.subject;
-      const $content = $_POST.content;
-      const $to = $_POST.email;
-
-
-      gmx.send({
-        subject: $subject.value,
-        content: $content.value,
-        to: $to.value
-      });
-    })
-}
-// end SMTP
 
   readFile(PATH, (error, file) => {
     if (error) {
@@ -157,7 +84,14 @@ if((req.method === 'POST') && (PATH === 'kontakt.html')) {
       res.setHeader('Content-Type', MIMETYPES[PATH.split('.').pop()] || 'text/plain');
 
       if (PATH.split('.').pop() === 'html') {
-        file = file.toString().replace('%HEADER%', HEADER).replace('%FOOTER%', FOOTER);
+        file = file.toString().replace('%HEADER%', HEADER).replace('%FOOTER%', FOOTER).replace("Gast", () => {
+          if (SESSION) {
+            return `${SESSION.username} `;
+          } else {
+            return `Gast`;
+          }
+        })
+
      }
 
       if (!error) {

@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <title>kontakt</title>
   <link rel="stylesheet" href="css/kontakt.css">
+  <script type="module" src="kontakt.js" ></script>
 </head>
 <body>
 
@@ -18,15 +19,15 @@
             <br>
             <p>Sieglangerufer 101<br>Innsbrck<br>SKY 1RT</p>
             <p>
-            <strong>Email:</strong>  web-shop-taeglich-frisch@gmx.at <br>
+            <strong>Email:</strong>  taeglichfrisch@gmx.net <br>
             <strong>Phone:</strong>  123-3331-4232-3442
             </p>
         </div>
         <form class="form"  action="kontakt.html" method="POST" >
-            <label>Empfänger</label>
-            <input type="email" name="email" placeholder="Empfänger" value ="" tabindex="1" required>
+            <label>Ihre E-Mail-Adresse</label>
+            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" value ="" tabindex="1" >
             <label>Betreff:</label>
-            <input type="text" name="subject" placeholder="Betreff" value="" tabindex="2" required>
+            <input type="text" name="subject" placeholder="Betreff" value="" tabindex="2" >
             <label>Nachricht:</label>
              <br>
             <textarea name="content" placeholder="Nachricht" tabindex="3" required></textarea>
@@ -34,6 +35,11 @@
         </form>
     </div>
   </div>
+  <aside class="sending" hidden>
+    <h1 class="status"></h1>
+    <progress value="0"></progress>
+    <span class="continue"></span>
+  </aside>
   <!--end contact me-->
   <script src="js/bootstrap.min.js"></script>
 </body>
